@@ -9,16 +9,35 @@ import IllustrationBox from "../resources/illustration-box-desktop.svg";
 
 export default function IllustrationSection() {
   return (
-    <div style={{ border: "1px solid green" }}>
+    <div style={{ border: "1px solid green", position: "relative" }}>
+      <img
+        src={BgPatternDesktop}
+        alt="BgPatternDesktop   "
+        style={{
+          width: "100%",
+          border: "1px solid green",
+          position: "absolute",
+        }}
+      />
       <img
         src={IllustrationWomanDesktop}
         alt="IllustrationWomanDesktop"
         style={{
-          width: "75%",
+          width: "100%",
+          border: "1px solid green",
+          position: "absolute",
+          //   right: "200px",
+        }}
+      />
+      <img
+        src={IllustrationBox}
+        alt="IllustrationBox"
+        style={{
+          width: "40%",
           border: "1px solid green",
           position: "relative",
-          top: "2rem",
-          right: "3rem",
+          top: "150px",
+          right: "50px",
         }}
       />
     </div>

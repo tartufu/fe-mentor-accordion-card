@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 
@@ -7,7 +7,16 @@ import FaqSection from "./FaqSection";
 import faqData from "./data/faqData";
 
 export default function AccordionDesktopContainer() {
-  console.log("TEST", faqData);
+  const [faqArr, setFaqArr] = useState(faqData);
+
+  const faqIsExpandedHandler = (id) => {
+    const faqArrCopy = [...faqArr];
+    const clickedFaqId = faqArrCopy.findIndex((faq) => faq.id === id);
+    faqArrCopy[clickedFaqId].isExpanded = !faqArrCopy[clickedFaqId].isExpanded;
+
+    setFaqArr(() => faqArrCopy);
+  };
+
   return (
     <Box
       sx={{
@@ -22,7 +31,10 @@ export default function AccordionDesktopContainer() {
           <IllustrationSection />
         </Grid>
         <Grid item xs={6} sx={{ padding: "1rem" }}>
-          <FaqSection faqData={faqData} />
+          <FaqSection
+            faqData={faqArr}
+            faqIsExpandedHandler={faqIsExpandedHandler}
+          />
         </Grid>
       </Grid>
     </Box>
