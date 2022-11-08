@@ -14,9 +14,6 @@ export default function FaqSection({ faqData, faqIsExpandedHandler }) {
       </Typography>
 
       {faqData.map((faq) => {
-        const isBold = faq.isExpanded && "bold";
-
-        console.log("isBold", isBold);
         return (
           <div key={faq.id}>
             <Accordion
@@ -33,14 +30,13 @@ export default function FaqSection({ faqData, faqIsExpandedHandler }) {
                 aria-controls="panel1a-content"
                 id="panel1a-header"
                 sx={{
-                  padding: "0 1rem 0 0",
                   "&:hover": { color: "hsl(14, 88%, 65%)" },
+                  padding: "0 1rem 0 0",
                 }}
                 onClick={() => faqIsExpandedHandler(faq.id)}
               >
                 <Typography
                   sx={{
-                    color: "hsl(237, 12%, 33%)",
                     fontWeight: faq.isExpanded && "bold",
                   }}
                 >
