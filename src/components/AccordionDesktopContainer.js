@@ -27,10 +27,10 @@ export default function AccordionDesktopContainer() {
       }}
     >
       <Grid container spacing={0}>
-        <Grid item xs={6} sx={{ border: "1px solid red" }}>
+        <Grid item sm={6} sx={{ border: "1px solid red" }}>
           <IllustrationSection />
         </Grid>
-        <Grid item xs={6} sx={{ padding: "1rem" }}>
+        <Grid item sm={6} sx={{ padding: "1rem" }}>
           <FaqSection
             faqData={faqArr}
             faqIsExpandedHandler={faqIsExpandedHandler}
